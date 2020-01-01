@@ -3,34 +3,30 @@ package com.awesome.development.androidcomponentlearning.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlin.properties.Delegates
 
 
 class MainActivityViewModel : ViewModel() {
 
-    private lateinit var a: MutableLiveData<Int>
-
-
-
-    private lateinit var clickCountA:MutableLiveData<Int>
-    private lateinit var clickCountB:MutableLiveData<Int>
-
+    private var clickCountAA = 0
+    private var clickCountBB =0
     fun getInitialCountA(): Int {
-        if (clickCountA.value)
-        return clickCountA
+
+        return clickCountAA
     }
 
     fun getInitialCountB(): Int {
-        return clickCountB
+        return clickCountBB
     }
 
     fun getCurrentCountA(): Int {
-        clickCountA += 1
-        return clickCountA
+        clickCountAA += 1
+        return clickCountAA
     }
 
     fun getCurrentCountB(): Int {
-        clickCountB += 1
-        return clickCountB
+        clickCountBB += 1
+        return clickCountBB
     }
 
 
